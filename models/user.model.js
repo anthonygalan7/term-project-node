@@ -6,7 +6,24 @@ const schema = new Schema({
         email: { type: String, unique: true, required: true },
         hash: { type: String, required: true },
         role: {type:String, required: true},
-        team: {type: JSON[6], required: true
+        team: {type: Array, required: true, items: {
+                        name: {type: String, unique: true, required: true},
+                        type: {type: String, required: true},
+                        move1: {type: String, required: true},
+                        move2: {type: String, required: true},
+                        move4: {type: String, required: true},
+                        sprite: {type: String, required: true},
+                        picture: {type: String, required: true},
+                        level: {type: Number, required: true},
+                        health: {type: Number, required: true},
+                        attack: {type: Number, required: true},
+                        defense: {type: Number, required: true},
+                        speed: {type: Number, required: true},
+                        spdef: {type: Number, required: true},
+                        spatt: {type: Number, required: true},
+                        strengths: {type: String, required: true},
+                        weaknesses: {type:String, required: true}
+                }
         }
     }
 );

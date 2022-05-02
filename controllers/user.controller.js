@@ -22,13 +22,13 @@ function register(req, res, next) {
 }
 
 function getTeam(req, res, next) {
-    userService.getTeam(req.body)
+    userService.getTeam(req.params)
         .then(team => res.json(team))
         .catch(err => next(err));
 }
 
 function setTeam(req, res, next) {
-    userService.setTeam(req.body)
+    userService.setTeam(req.body, req.body.username)
         .then(team => res.json(team))
         .catch(err => next(err));
 }

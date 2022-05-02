@@ -7,7 +7,7 @@ const authorize = require('../_helpers/authorize');
 
 router.post('/authenticate', userController.authenticate);
 router.post('/register', userController.register);
-router.get('/getteam', userController.getTeam);
+router.get('/getteam:username', userController.getTeam);
 router.post('/setteam', userController.setTeam);
 
 // router.get('/allusers', userController.getAllUsers);

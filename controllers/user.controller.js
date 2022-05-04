@@ -4,7 +4,7 @@ module.exports = {
     authenticate,
     register,
     getTeam,
-    setTeam
+    setPokemon
 };
 
 function authenticate(req, res, next) {
@@ -22,13 +22,15 @@ function register(req, res, next) {
 }
 
 function getTeam(req, res, next) {
+    console.log(req.params);
     userService.getTeam(req.params)
         .then(team => res.json(team))
         .catch(err => next(err));
 }
 
-function setTeam(req, res, next) {
-    userService.setTeam(req.body, req.body.username)
+function setPokemon(req, res, next) {
+    console.log(req.body);
+    userService.setPokemon(req.body.team, req.body._id)
         .then(team => res.json(team))
         .catch(err => next(err));
 }

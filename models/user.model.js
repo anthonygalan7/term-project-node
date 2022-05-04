@@ -8,9 +8,10 @@ const schema = new Schema({
         role: {type:String, required: true},
         team: {type: Array, required: true, items: {
                         name: {type: String, unique: true, required: true},
-                        type: {type: String, required: true},
+                        type: {type: Number, required: true},
                         move1: {type: String, required: true},
                         move2: {type: String, required: true},
+                        move3: {type: String, required: true},
                         move4: {type: String, required: true},
                         sprite: {type: String, required: true},
                         picture: {type: String, required: true},
@@ -21,8 +22,8 @@ const schema = new Schema({
                         speed: {type: Number, required: true},
                         spdef: {type: Number, required: true},
                         spatt: {type: Number, required: true},
-                        strengths: {type: String, required: true},
-                        weaknesses: {type:String, required: true}
+                        strengths: {type: Number, required: true},
+                        weaknesses: {type: Number, required: true}
                 }
         }
     }
